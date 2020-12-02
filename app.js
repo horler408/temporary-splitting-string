@@ -1,4 +1,6 @@
-const firstName = 'firstabc'
+// first we will need to split first name just incase it's already a copy
+let firstName = 'firstabc'
+firstName = firstName.split('_copy')[0]
 const items = [
   {
     firstname: 'first',
@@ -17,6 +19,18 @@ const items = [
   },
   {
     firstname: 'secondabc',
+  },
+  {
+    firstname: 'secondabc_copy2',
+  },
+  {
+    firstname: 'secondabc_copy3',
+  },
+  {
+    firstname: 'secondabc_copy4',
+  },
+  {
+    firstname: 'secondb',
   },
 ]
 // we are returning object
@@ -41,8 +55,9 @@ const tempItems = items.reduce((total, item) => {
   }
   return total
 }, {})
-// since we are returning object we must covert back to arrays
-// first we get names
+// now we can check if firstName is in the object
+// set copyValue to a number (biggest value of copy)
+// if it's not in the object just do the manual approach
 let copyValue = 0
 if (tempItems[firstName]) {
   copyValue = tempItems[firstName]
